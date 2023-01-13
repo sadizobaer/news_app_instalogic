@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final articlesModel = articlesModelFromJson(jsonString);
-
 import 'dart:convert';
 
 ArticlesModel? articlesModelFromJson(String str) =>
@@ -67,11 +63,11 @@ class Article {
   String? description;
   String? url;
   String? urlToImage;
-  DateTime? publishedAt;
+  dynamic publishedAt;
   String? content;
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
-        source: json["source"],
+        source: Source.fromJson(json["source"]),
         author: json["author"],
         title: json["title"],
         description: json["description"],
@@ -99,7 +95,7 @@ class Source {
     this.name,
   });
 
-  String? id;
+  dynamic id;
   String? name;
 
   factory Source.fromJson(Map<String, dynamic> json) => Source(

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:get/get.dart';
 import 'package:news_app/app/utils/initial_bindings.dart';
-
 import 'app/routes/app_pages.dart';
 import 'app/utils/app_theme.dart';
 

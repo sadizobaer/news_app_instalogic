@@ -5,7 +5,22 @@ import 'colors.dart';
 class AppTheme {
   static primaryTheme() {
     return ThemeData(
-      //primaryColor: AppColors.black,
+      primaryColor: AppColors.black,
+      primarySwatch:  const MaterialColor(
+        0xFF000000,
+        <int, Color>{
+          50: Color(0xFF000000),
+          100: Color(0xFF000000),
+          200: Color(0xFF000000),
+          300: Color(0xFF000000),
+          400: Color(0xFF000000),
+          500: Color(0xFF000000),
+          600: Color(0xFF000000),
+          700: Color(0xFF000000),
+          800: Color(0xFF000000),
+          900: Color(0xFF000000),
+        },
+      ),
       scaffoldBackgroundColor: AppColors.backgroundColor,
       textTheme: TextTheme(
         headline6: TextStyle(
