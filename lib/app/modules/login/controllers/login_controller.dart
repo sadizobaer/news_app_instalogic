@@ -12,6 +12,7 @@ class LoginController extends GetxController {
   final formKey = GlobalKey<FormState>();
   RxBool isLoading = false.obs;
 
+  /// authenticating the user
   authenticateUser() async {
     isLoading.value = true;
     await firebaseRepository.authenticateUserWithEmailAndPassword(

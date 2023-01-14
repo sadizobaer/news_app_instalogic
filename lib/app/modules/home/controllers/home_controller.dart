@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news_app/app/data/models/articles_model.dart';
 import 'package:news_app/app/data/repositories/article_repository.dart';
@@ -31,6 +30,7 @@ class HomeController extends GetxController {
     }
   }
 
+  /// saved to favorites
   saveToFavorites(Article article) async {
     await firebaseRepository.addToFavorites(
       article.urlToImage!,

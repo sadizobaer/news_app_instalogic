@@ -1,13 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/app/data/models/saved_article_model.dart';
-
-import '../../../utils/colors.dart';
+import 'package:news_app/app/utils/colors.dart';
 
 class FavoriteArticleCard extends StatelessWidget {
   final SavedArticleModel savedArticleModel;
-  const FavoriteArticleCard({Key? key, required this.savedArticleModel,}) : super(key: key);
+  const FavoriteArticleCard({
+    Key? key,
+    required this.savedArticleModel,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class FavoriteArticleCard extends StatelessWidget {
       ),
     );
   }
+
   Flexible buildCardInfo(BuildContext context) {
     return Flexible(
       child: Column(

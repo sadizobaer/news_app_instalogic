@@ -24,8 +24,9 @@ class MyFavoritesView extends GetView<MyFavoritesController> {
                       : ListView(
                           children: favorites
                               .map(
-                                (e) =>
-                                    FavoriteArticleCard(savedArticleModel: e),
+                                (e) => FavoriteArticleCard(
+                                  savedArticleModel: e,
+                                ),
                               )
                               .toList(),
                         );

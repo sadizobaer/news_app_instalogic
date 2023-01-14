@@ -7,8 +7,8 @@ class MyFavoritesController extends GetxController {
   FirebaseRepository firebaseRepository;
   MyFavoritesController({required this.firebaseRepository});
 
+  /// reading the articles from fire-store
   Stream<List<SavedArticleModel>> readArticles() {
     return  firebaseRepository.favoritesArticles();
-
   }
 }

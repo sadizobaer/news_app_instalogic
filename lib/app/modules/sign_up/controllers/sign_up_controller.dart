@@ -12,6 +12,7 @@ class SignUpController extends GetxController {
   final formKey = GlobalKey<FormState>();
   RxBool isLoading = false.obs;
 
+  /// creating a user
   createUser() async {
     isLoading.value = true;
     await firebaseRepository.createUserWithEmailAndPassword(
