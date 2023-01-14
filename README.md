@@ -6,6 +6,20 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
+
+in this app we have used several packages
+1. package for firebase authentication and database
+  - firebase-core
+  - firebase-auth
+  - cloud-firestore
+2. package for screen management
+  - flutter screen-util
+3. package for state management
+  - get
+4. package for api client
+  - dio
+  - flutter-pretty-dio-logger
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
