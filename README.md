@@ -20,6 +20,9 @@ in this app we have used several packages
   - dio
   - flutter-pretty-dio-logger
 
+screen-shots added in - assets/screen-shots folder
+apk link- https://drive.google.com/drive/folders/1ZQia-uNgP1l3s8--yR-ZAvIsqnsAN6l0
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
