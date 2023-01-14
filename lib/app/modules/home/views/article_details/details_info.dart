@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:news_app/app/data/models/articles_model.dart';
 import 'package:news_app/app/utils/colors.dart';
+import 'package:news_app/app/modules/home/controllers/home_controller.dart';
 
-class DetailsInfo extends StatelessWidget {
+class DetailsInfo extends GetView<HomeController> {
   final Article article;
   const DetailsInfo({Key? key, required this.article}) : super(key: key);
 
@@ -56,9 +58,19 @@ class DetailsInfo extends StatelessWidget {
           maxLines: 3,
           softWrap: true,
         ),
-        Icon(
-          Icons.favorite_border,
-          size: 24.sp,
+        GestureDetector(
+          onTap: () {
+            controller.saveToFavorites(article);
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Saved to favorites'),
+              ),
+            );
+          },
+          child: Icon(
+            Icons.favorite_border,
+            size: 24.sp,
+          ),
         ),
       ],
     );

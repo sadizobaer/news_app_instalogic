@@ -69,6 +69,7 @@ class LoginBody extends GetView<LoginController> {
             hint: 'Enter password',
             icon: Icons.password,
             controller: controller.passwordController,
+            secure: true,
           ),
           SizedBox(height: 16.h),
         ],

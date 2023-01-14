@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:news_app/app/modules/home/controllers/home_controller.dart';
 import 'package:news_app/app/utils/custom_appbar.dart';
+import 'package:news_app/app/routes/app_pages.dart';
 import 'all_articles/all_articles.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -11,7 +12,9 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(Routes.MY_FAVORITES);
+        },
         child: Icon(
           Icons.favorite_border,
           size: 20.sp,

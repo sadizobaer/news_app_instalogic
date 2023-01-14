@@ -1,10 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news_app/app/data/models/articles_model.dart';
 import 'package:news_app/app/data/repositories/article_repository.dart';
+import 'package:news_app/app/data/repositories/firebase_repository.dart';
 
 class HomeController extends GetxController {
   ArticleRepository articleRepository;
-  HomeController({required this.articleRepository});
+  FirebaseRepository firebaseRepository;
+  HomeController({
+    required this.articleRepository,
+    required this.firebaseRepository,
+  });
   @override
   void onInit() {
     getArticles();
@@ -15,13 +21,22 @@ class HomeController extends GetxController {
   Rx<ArticlesModel?> articles = Rx<ArticlesModel?>(null);
 
   /// getting articles from news api
-  getArticles() async{
+  getArticles() async {
     isLoading.value = true;
     final response = await articleRepository.getArticles();
     isLoading.value = false;
-    if(response != null){
+    if (response != null) {
       ArticlesModel allArticles = ArticlesModel.fromJson(response);
       articles.value = allArticles;
     }
+  }
+
+  saveToFavorites(Article article) async {
+    await firebaseRepository.addToFavorites(
+      article.urlToImage!,
+      article.title!,
+      article.author!,
+      article.description!,
+    );
   }
 }

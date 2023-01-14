@@ -1,23 +1,14 @@
 import 'package:get/get.dart';
+import 'package:news_app/app/data/repositories/firebase_repository.dart';
+
+import '../../../data/models/saved_article_model.dart';
 
 class MyFavoritesController extends GetxController {
-  //TODO: Implement MyFavoritesController
+  FirebaseRepository firebaseRepository;
+  MyFavoritesController({required this.firebaseRepository});
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  Stream<List<SavedArticleModel>> readArticles() {
+    return  firebaseRepository.favoritesArticles();
+
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
