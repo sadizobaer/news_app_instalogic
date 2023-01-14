@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:news_app/app/data/models/saved_article_model.dart';
+import 'package:news_app/app/modules/my_favorites/views/favorites_details/favorite_details.dart';
 import 'package:news_app/app/utils/colors.dart';
 
 class FavoriteArticleCard extends StatelessWidget {
@@ -12,19 +15,24 @@ class FavoriteArticleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(12.w, 4.h, 12.w, 4.h),
-      padding: EdgeInsets.fromLTRB(12.w, 8.h, 12.w, 8.h),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(15.r),
-      ),
-      child: Row(
-        children: <Widget>[
-          buildCardImage(),
-          SizedBox(width: 16.w),
-          buildCardInfo(context),
-        ],
+    return GestureDetector(
+      onTap: (){
+        Get.to(FavoriteDetails(savedArticleModel: savedArticleModel));
+      },
+      child: Container(
+        margin: EdgeInsets.fromLTRB(12.w, 4.h, 12.w, 4.h),
+        padding: EdgeInsets.fromLTRB(12.w, 8.h, 12.w, 8.h),
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(15.r),
+        ),
+        child: Row(
+          children: <Widget>[
+            buildCardImage(),
+            SizedBox(width: 16.w),
+            buildCardInfo(context),
+          ],
+        ),
       ),
     );
   }
