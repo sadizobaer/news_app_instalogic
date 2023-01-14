@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:news_app/app/modules/home/controllers/home_controller.dart';
-import 'package:news_app/app/utils/colors.dart';
+import 'package:news_app/app/utils/custom_appbar.dart';
 import 'all_articles/all_articles.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -10,17 +10,6 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Text(
-          'News',
-          style: Theme.of(context)
-              .textTheme
-              .headline6
-              ?.copyWith(color: AppColors.white, fontSize: 18.sp),
-        ),
-        centerTitle: true,
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(
@@ -28,12 +17,19 @@ class HomeView extends GetView<HomeController> {
           size: 20.sp,
         ),
       ),
-      body: Obx(
-        () => controller.articles.value == null
-            ? const Center(child: CircularProgressIndicator())
-            : AllArticles(
-                articles: controller.articles.value?.articles ?? [],
-              ),
+      body: Column(
+        children: [
+          const CustomAppbar(title: 'News'),
+          Expanded(
+            child: Obx(
+              () => controller.articles.value == null
+                  ? const Center(child: CircularProgressIndicator())
+                  : AllArticles(
+                      articles: controller.articles.value?.articles ?? [],
+                    ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -17,7 +17,6 @@ class DetailsInfo extends StatelessWidget {
             '${article.title}'.toUpperCase(),
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
-            textAlign: TextAlign.left,
             style: Theme.of(context)
                 .textTheme
                 .subtitle1

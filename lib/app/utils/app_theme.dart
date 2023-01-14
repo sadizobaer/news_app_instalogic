@@ -21,6 +21,19 @@ class AppTheme {
           900: Color(0xFF000000),
         },
       ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          fixedSize: Size(328.w, 54.h),
+          primary: AppColors.black,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.r),
+          ),
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+            vertical: 6.h,
+          ),
+        ),
+      ),
       scaffoldBackgroundColor: AppColors.backgroundColor,
       textTheme: TextTheme(
         headline6: TextStyle(
