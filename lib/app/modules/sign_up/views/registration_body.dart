@@ -22,7 +22,7 @@ class RegistrationBody extends GetView<SignUpController> {
             child: SizedBox(
               height: 100.h,
               width: 100.w,
-              child: Image.asset(AppImages.loginImage),
+              child: Image.asset(AppImages.regImage),
             ),
           ),
           SizedBox(height: 40.h),
